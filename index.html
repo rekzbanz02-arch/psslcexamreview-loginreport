@@ -89,9 +89,6 @@
       const data = await res.json();
       const logs = Array.isArray(data.record) ? data.record : (data.record.logs || [data.record]);
 
-      // Sort logs by timestamp (newest first)
-logs.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
-
       
       // ---- Summary ----
       document.getElementById("totalVisits").textContent = logs.length;
@@ -214,4 +211,5 @@ logs.sort((a, b) => new Date(b.timestamp) - new Date(a.timestamp));
 </body>
 
 </html>
+
 
